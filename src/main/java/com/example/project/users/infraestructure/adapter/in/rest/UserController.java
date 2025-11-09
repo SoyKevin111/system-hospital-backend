@@ -35,11 +35,7 @@ public class UserController {
       user.setProfile(doctor);
       Doctor savedDoctor = doctorService.create(doctor);
 
-      Map<String, Object> response = new HashMap<>();
-      response.put("doctor", savedDoctor);
-      response.put("user", savedDoctor.getUser());
-
-      return ResponseEntity.ok(response);
+      return ResponseEntity.ok(savedDoctor.getUser());
    }
 
    @GetMapping

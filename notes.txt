@@ -1,0 +1,5 @@
+
+por hacer:
+
+ - agregar columna profile_type para almacenar el valor de un enum
+ - terminar el service y repo de todas las entidades (cruds basicos)
