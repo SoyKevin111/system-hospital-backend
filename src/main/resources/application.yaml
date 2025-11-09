@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: servicio backend para el sistema del hospital.
+    datasource:
+      url: jdbc:postgresql://localhost:5432/kevents
+      username: postgres
+      password: 123456
+      driver-class-name: org.postgresql.Driver
+      jpa:
+        #hibernate:
+        #  ddl-auto: create
+        show-sql: true
+    server:
+      servlet:
+        context-path: /kevents
+
