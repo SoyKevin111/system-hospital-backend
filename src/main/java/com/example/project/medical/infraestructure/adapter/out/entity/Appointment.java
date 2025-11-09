@@ -1,7 +1,7 @@
 package com.example.project.medical.infraestructure.adapter.out.entity;
 
 import com.example.project.users.infraestructure.adapter.out.entity.Doctor;
-import com.example.project.users.infraestructure.adapter.out.entity.Patient;
+import com.example.project.users.infraestructure.adapter.out.entity.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,7 +28,7 @@ public class Appointment {
 
    @ManyToOne
    @JoinColumn(name = "id_patient", referencedColumnName = "id", nullable = false) //no puede ser null
-   private Patient patient;
+   private User patient;
 
    @OneToOne
    @JoinColumn(name = "id_diagnosis", referencedColumnName = "id")

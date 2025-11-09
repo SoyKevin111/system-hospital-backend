@@ -1,4 +1,4 @@
-package com.example.project.common.domain.model;
+package com.example.project.users.infraestructure.adapter.out.entity;
 
 public enum Role {
    ADMIN,

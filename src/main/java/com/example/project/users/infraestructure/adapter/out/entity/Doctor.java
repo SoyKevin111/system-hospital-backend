@@ -1,18 +1,22 @@
 package com.example.project.users.infraestructure.adapter.out.entity;
 
-import com.example.project.common.domain.model.User;
 import com.example.project.medical.infraestructure.adapter.out.entity.Mastery;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
 
 @Entity
-@Table(name = "Doctor")
-@Getter @Setter
-public class Doctor extends User { //actualiza cita, realiza diagnosticos, receta medica y crea citas
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Doctor extends Profile { //actualiza cita, realiza diagnosticos, receta medica y crea citas
 
+   @Getter @Setter
    @ManyToMany
    @JoinTable(
       name = "doctor_mastery",
@@ -20,4 +24,5 @@ public class Doctor extends User { //actualiza cita, realiza diagnosticos, recet
       inverseJoinColumns = @JoinColumn( name = "id_mastery")
    )
    private List<Mastery> masteries;
+
 }

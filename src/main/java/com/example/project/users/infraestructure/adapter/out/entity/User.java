@@ -1,11 +1,14 @@
-package com.example.project.common.domain.model;
+package com.example.project.users.infraestructure.adapter.out.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
 import java.time.LocalDateTime;
 
-@MappedSuperclass
+@Entity
+@Table(name = "\"user\"")
 @Getter
 @Setter
 public class User {
@@ -29,14 +32,17 @@ public class User {
    @Column(nullable = false)
    private Role role;
 
-   @Column(nullable = false)
    private Boolean status = true;
 
-   @Column(name = "created_at", nullable = false, updatable = false)
+   @Column(name = "created_at", updatable = false)
    private LocalDateTime createdAt;
 
    @Column(name = "last_updated")
    private LocalDateTime lastUpdated;
+
+   @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true) //null si no hay profile
+   @JsonManagedReference //principal
+   private Profile profile;
 
    @PrePersist
    public void prePersist() {

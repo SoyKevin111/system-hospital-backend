@@ -27,10 +27,10 @@ public class Invoice {
 
    private String code; //INV-000N
 
-   @Column(name = "total", nullable = false)
-   private Double Subtotal;
+   @Column( nullable = false)
+   private Double subtotal;
 
-   @Column(name = "total", nullable = false)
+   @Column(nullable = false)
    private Double total;
 
    @Column(name = "created_at", nullable = false, updatable = false)
