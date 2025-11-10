@@ -20,7 +20,7 @@ public class Recipe {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
 
-   @ManyToMany
+   @ManyToMany //lectura
    @JoinTable(
       name ="recipe_medical_supply",
       joinColumns = @JoinColumn(name = "id_recipe"),

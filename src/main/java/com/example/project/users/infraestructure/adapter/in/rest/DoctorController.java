@@ -7,16 +7,13 @@ import com.example.project.users.infraestructure.adapter.out.entity.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @RestController
-@RequestMapping("/users")
-public class UserController {
+@RequestMapping("/users/doctor")
+public class DoctorController {
 
    private final IDoctorService doctorService;
 
-   public UserController(IDoctorService doctorService) {
+   public DoctorController(IDoctorService doctorService) {
       this.doctorService = doctorService;
    }
 

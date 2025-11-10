@@ -1,6 +1,7 @@
-package com.example.project.billing.infraestructure.adapter.out.entity;
+package com.example.project.billing.infraestructure.adapter.out;
 
 import com.example.project.medical.infraestructure.adapter.out.entity.Appointment;
+import com.example.project.users.infraestructure.adapter.out.entity.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,9 +22,13 @@ public class Invoice {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
 
-   @OneToOne
+   @OneToOne//lectura
    @JoinColumn(name = "appointment_id", nullable = false, referencedColumnName = "id")
    private Appointment appointment;
+
+   @OneToOne
+   @JoinColumn(name = "accounting_manager_id", nullable = false, referencedColumnName = "id")
+   private User accountingManager;
 
    private String code; //INV-000N
 

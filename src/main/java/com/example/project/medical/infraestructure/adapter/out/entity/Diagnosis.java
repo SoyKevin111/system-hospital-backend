@@ -20,7 +20,7 @@ public class Diagnosis {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
 
-   @ManyToMany
+   @ManyToMany(cascade = CascadeType.PERSIST) //persist
    @JoinTable(
       name = "diagnosis_vital_sign",
       joinColumns = @JoinColumn(name = "id_diagnosis"),

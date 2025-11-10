@@ -22,23 +22,23 @@ public class Appointment {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
 
-   @ManyToOne
+   @ManyToOne//lectura
    @JoinColumn(name = "id_doctor", referencedColumnName = "id")
    private Doctor doctor;
 
-   @ManyToOne
-   @JoinColumn(name = "id_patient", referencedColumnName = "id", nullable = false) //no puede ser null
+   @ManyToOne//lectura
+   @JoinColumn(name = "id_patient", referencedColumnName = "id", nullable = false)
    private User patient;
 
-   @OneToOne
+   @OneToOne(cascade = CascadeType.PERSIST)//persist
    @JoinColumn(name = "id_diagnosis", referencedColumnName = "id")
    private Diagnosis diagnosis; //diagnostico
 
-   @OneToOne
+   @OneToOne(cascade = CascadeType.PERSIST)//persist
    @JoinColumn(name = "id_recipe", referencedColumnName = "id")
    private Recipe recipe; //receta
 
-   @ManyToOne
+   @ManyToOne //lectura
    @JoinColumn(name = "id_mastery", referencedColumnName = "id")
    private Mastery mastery; //maestria/especialidad
 
